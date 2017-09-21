@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HSJPDA</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="advice">设备：</string>
+    <string name="port">端口：</string>
+    <string name="ip_address">/dev/ttyS3</string>
+    <string name="portNumber">115200</string>
+    <string name="connect">连接</string>
+    <string name="disconnect">断开</string>
+    <string name="read">读卡</string>
+    <string name="query">查询</string>
+    <string name="clear">清除</string>
+    <string name="stop">停止</string>
+    <string name="connecting">连接中&#8230;</string>
+    <string name="action_settings">设置</string>
+     <string name="title_activity_login">HSJPDA</string>
+</resources>

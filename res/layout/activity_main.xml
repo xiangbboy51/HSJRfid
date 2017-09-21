@@ -1,0 +1,268 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity" 
+    
+    >
+    
+	<LinearLayout
+        android:id="@+id/connect_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+       
+        android:visibility="gone" >
+        
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/connecting"
+            android:textSize="16sp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>    
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:padding="4dp" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+           <TextView 
+               android:layout_width="0dp"
+               android:layout_weight="5"
+               android:layout_height="wrap_content"
+               android:textSize="18sp"
+               android:text="请选择工单号："/>   
+	       <Spinner 
+	           android:id="@+id/spinner"
+	           android:layout_width="0dp"
+	           android:layout_weight="5"
+	           android:layout_height="wrap_content"
+	           android:textSize="18sp"
+	           android:gravity="center"
+	           /> 
+	          
+  </LinearLayout>      
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:padding="3dp" 
+	        android:visibility="gone">
+
+	        <TextView
+	            android:id="@+id/adviceText"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/advice" />
+
+	        <EditText
+	            android:id="@+id/ipText"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:inputType="textWebEditText"
+	            android:enabled="false"
+	            android:text="@string/ip_address" />
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:padding="3dp" 
+	        android:visibility="gone">
+
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/port" />
+           
+	        
+	        <EditText
+	            android:id="@+id/portText"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:inputType="number"
+	            android:enabled="false"
+	            android:text="@string/portNumber" />
+	    </LinearLayout>
+	    
+	
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:visibility="gone"
+	        android:padding="3dp" >
+
+	        <Button
+	            android:id="@+id/connectBtn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:text="@string/connect" />
+
+	        <Button
+	            android:id="@+id/disconnectBtn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:text="@string/disconnect" />
+	    </LinearLayout>
+        
+	    
+	     <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:padding="3dp" 
+	        android:background="#aaaaaa">
+	    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.82"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#313031"
+        android:singleLine="true" 
+        android:text="标签号"/>
+    
+     <TextView 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.18"
+        android:textSize="18sp"
+        android:textColor="#313031"
+        android:gravity="center" 
+        android:text="次数"/>
+	        
+	         
+	         
+	        </LinearLayout>
+	    
+	    
+	    
+	    
+	    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_margin="1dp"
+	        android:layout_weight="1"
+	        android:orientation="vertical" >
+
+	        <ListView
+	            android:id="@+id/dataSet"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_margin="1dp"
+	            android:listSelector="@drawable/list_item_shape" >
+	        </ListView>
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:padding="3dp" >
+	        
+	     <TextView
+                android:id="@+id/sum"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:textSize="18sp"
+	            android:textColor="#00ff00"
+	            android:text="扫描到数量:0" />     
+	    </LinearLayout>
+	    
+	     <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:padding="3dp" >
+	        
+	     <TextView
+                android:id="@+id/pandian"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:textSize="18sp"
+	            android:textColor="#bb0000"
+	            android:text="某单号盘点的数量:0" />     
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="1dp"
+	        android:orientation="horizontal"
+	        android:visibility="gone"
+	        android:padding="3dp" >
+
+	        <Button
+	            android:id="@+id/readBtn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:text="@string/read" />
+
+	        <Button
+	            android:id="@+id/stopBtn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:text="@string/stop" />
+
+	        <Button
+	            android:id="@+id/clearButton"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:text="@string/clear" />
+
+	        <Button
+	            android:id="@+id/queryButton"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:text="@string/query" />
+	     </LinearLayout>
+	     <Button
+	            android:id="@+id/upload"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="1dp"
+	            android:gravity="center"
+	            android:background="@drawable/login_btn"
+	            android:text="上传" />
+	</LinearLayout>
+
+</merge>

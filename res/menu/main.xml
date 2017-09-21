@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hsj.hsjrfid.MainActivity" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+    <item 
+        android:id="@+id/aa"
+        android:showAsAction="ifRoom|withText"
+        android:title="工单1"/>
+     <item 
+         android:id="@+id/bb"
+        android:showAsAction="ifRoom|withText"
+        android:title="工单2"/>
+      <item 
+          android:id="@+id/cc"
+        android:showAsAction="ifRoom|withText"
+        android:title="工单3"/>
+    
+</menu>
